@@ -1,42 +1,58 @@
 import { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code, Database, Server, Laptop, Smartphone, Hammer } from "lucide-react";
 
 const timelineContent = [
     {
         year: '2019',
         content:
             'Joined OmniPreSense and developed an iOS WiFi radar app using VIPER and RxSwift. Released a high-performance Android version with 1,000+ downloads and significant performance improvements.',
+        icon: <Smartphone size={24} className="text-blue-500" />
     },
     {
         year: '2020',
         content:
             'Earned a B.S. in Software Engineering from San Jose State University, building a strong foundation in software design and systems thinking.',
+        icon: <Laptop size={24} className="text-blue-500" />
     },
     {
         year: '2021',
         content:
             'Led the development of an Apple Watch-based healthcare tracking app at Atlas Lift Tech, improving patient safety through real-time system insights.',
+        icon: <Smartphone size={24} className="text-blue-500" />
     },
     {
         year: '2022',
         content:
             'Designed and shipped RESTful APIs and optimized Bluetooth/MQTT connectivity for reliable, secure device communication across healthcare platforms.',
+        icon: <Server size={24} className="text-blue-500" />
     },
     {
         year: '2023',
         content:
             'Concluded tenure at Atlas Lift Tech to pursue an M.S. in Software Engineering at San Jose State University, focusing on distributed systems and clean architecture.',
+        icon: <Laptop size={24} className="text-blue-500" />
     },
     {
         year: '2024',
         content:
             'Transitioned into full-stack web development; rebuilt a traffic monitoring dashboard using the MERN stack, integrated AWS S3 with signed URL downloads, and implemented resume analytics with GraphQL + MongoDB.',
+        icon: <Code size={24} className="text-blue-500" />
     },
     {
         year: '2025',
         content:
             'Completed M.S. in Software Engineering and actively seeking opportunities to drive impact through scalable, user-focused engineering.',
     },
+];
+
+// Tech stack data
+const techStack = [
+    { category: "Frontend", skills: ["React", "Tailwind CSS", "JavaScript"] },
+    { category: "Backend", skills: ["Node.js", "Express", "GraphQL"] },
+    { category: "Database", skills: ["MongoDB", "InfluxDB"] },
+    { category: "Mobile", skills: ["iOS (Swift)", "Android (Java/Kotlin)"] },
+    { category: "Cloud", skills: ["AWS S3", "AWS Lambda"] },
+    { category: "Tools", skills: ["Git", "Docker", "CI/CD"] }
 ];
 
 export default function About() {
@@ -122,48 +138,91 @@ export default function About() {
     return (
         <section
             id="about"
-            className="min-h-screen snap-start bg-gradient-to-b from-gray-800/70 to-gray-900/70 flex flex-col items-center text-center px-6 py-12"
+            className="min-h-screen snap-start bg-gradient-to-b from-gray-800/70 to-gray-900/70 flex flex-col items-center px-6 py-12 relative overflow-hidden"
         >
-            <h2 className="text-4xl font-bold mb-6">About Me</h2>
-            <div className="text-lg max-w-2xl leading-relaxed text-gray-200 mb-4">
-                <p className="text-justify mb-4">
-                    I'm a <span className="text-blue-400">software engineer</span> with
-                    <span className="text-blue-400"> 3+ years</span> in
-                    <span className="text-blue-400"> mobile development</span>, now focused on
-                    <span className="text-blue-400"> full-stack web development</span>. I build
-                    <span className="text-blue-400"> scalable, user-first applications</span> using
-                    <span className="text-blue-400"> React</span>,
-                    <span className="text-blue-400"> Node.js</span>,
-                    <span className="text-blue-400"> GraphQL</span>, and
-                    <span className="text-blue-400"> MongoDB</span>, with a strong emphasis on
-                    <span className="text-blue-400"> clean architecture</span> and
-                    <span className="text-blue-400"> performance</span>.
-                </p>
+            {/* Background accent elements */}
+            <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
 
-                <p className="text-justify">
-                    Recently, I integrated <span className="text-blue-400">AWS S3</span> with
-                    <span className="text-blue-400"> signed URL downloads</span> and built
-                    <span className="text-blue-400"> resume analytics</span> via
-                    <span className="text-blue-400"> GraphQL</span> +
-                    <span className="text-blue-400"> MongoDB</span>. I'm also modernizing a
-                    <span className="text-blue-400"> traffic monitoring dashboard</span> using
-                    <span className="text-blue-400"> React</span> +
-                    <span className="text-blue-400"> Tailwind</span>, preparing it to render
-                    <span className="text-blue-400"> live metrics</span> from
-                    <span className="text-blue-400"> InfluxDB</span>.
-                </p>
+            <h2 className="text-4xl font-bold mb-8 relative">
+                About Me
+                <div className="h-1 w-12 bg-blue-500 rounded-full mt-2 mx-auto"></div>
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-10 w-full max-w-5xl mb-14">
+                <div className="text-lg leading-relaxed text-gray-200">
+                    <p className="text-justify mb-4">
+                        I'm a <span className="text-blue-400">software engineer</span> with
+                        <span className="text-blue-400"> 3+ years</span> in
+                        <span className="text-blue-400"> mobile development</span>, now focused on
+                        <span className="text-blue-400"> full-stack web development</span>. I build
+                        <span className="text-blue-400"> scalable, user-first applications</span> using
+                        <span className="text-blue-400"> React</span>,
+                        <span className="text-blue-400"> Node.js</span>,
+                        <span className="text-blue-400"> GraphQL</span>, and
+                        <span className="text-blue-400"> MongoDB</span>, with a strong emphasis on
+                        <span className="text-blue-400"> clean architecture</span> and
+                        <span className="text-blue-400"> performance</span>.
+                    </p>
+
+                    <p className="text-justify">
+                        Recently, I integrated <span className="text-blue-400">AWS S3</span> with
+                        <span className="text-blue-400"> signed URL downloads</span> and built
+                        <span className="text-blue-400"> resume analytics</span> via
+                        <span className="text-blue-400"> GraphQL</span> +
+                        <span className="text-blue-400"> MongoDB</span>. I'm also modernizing a
+                        <span className="text-blue-400"> traffic monitoring dashboard</span> using
+                        <span className="text-blue-400"> React</span> +
+                        <span className="text-blue-400"> Tailwind</span>, preparing it to render
+                        <span className="text-blue-400"> live metrics</span> from
+                        <span className="text-blue-400"> InfluxDB</span>.
+                    </p>
+                </div>
+
+                {/* Tech Stack Section */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/10 text-left">
+                    <h3 className="text-xl font-semibold mb-4 text-center text-white">Tech Stack</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                        {techStack.map((tech, index) => (
+                            <div key={index} className="mb-4">
+                                <h4 className="text-blue-400 font-medium mb-2 flex items-center gap-2">
+                                    {tech.category === "Frontend" && <Code size={16} />}
+                                    {tech.category === "Backend" && <Server size={16} />}
+                                    {tech.category === "Database" && <Database size={16} />}
+                                    {tech.category === "Mobile" && <Smartphone size={16} />}
+                                    {tech.category === "Cloud" && <Server size={16} />}
+                                    {tech.category === "Tools" && <Hammer size={16} />}
+                                    {tech.category}
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {tech.skills.map((skill, skillIndex) => (
+                                        <span
+                                            key={skillIndex}
+                                            className="text-xs bg-white/10 rounded-full px-3 py-1 text-gray-200 hover:bg-blue-500/30 transition-colors"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
-            <div className="mt-12 w-full">
-                <h3 className="text-2xl font-semibold mb-6 text-center text-white">My Journey</h3>
+            <div className="w-full max-w-5xl">
+                <h3 className="text-2xl font-semibold mb-8 text-center text-white relative">
+                    My Journey
+                    <div className="h-1 w-12 bg-blue-500 rounded-full mt-2 mx-auto"></div>
+                </h3>
 
                 {/* Tab Buttons */}
-                <div className="flex justify-center gap-4 mb-6">
+                <div className="flex justify-center gap-4 mb-8">
                     {["condense", "timeline"].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`px-4 py-2 rounded-md font-medium transition-all duration-300 ${
+                            className={`px-5 py-2 rounded-md font-medium transition-all duration-300 ${
                                 activeTab === tab
                                     ? "bg-blue-600 text-white shadow-lg scale-105"
                                     : "bg-gray-200 text-gray-800 hover:bg-gray-300"
@@ -181,10 +240,15 @@ export default function About() {
                         {timelineContent.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-white/90 border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition transform hover:-translate-y-1 duration-300"
+                                className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg p-5 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300"
                             >
-                                <h4 className="text-lg font-semibold text-blue-700">{item.year}</h4>
-                                <p className="text-gray-700 text-sm mt-1">{item.content}</p>
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 bg-gray-800/50 rounded-full">
+                                        {item.icon}
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-blue-400">{item.year}</h4>
+                                </div>
+                                <p className="text-gray-200 text-sm">{item.content}</p>
                             </div>
                         ))}
                     </div>
@@ -221,12 +285,14 @@ export default function About() {
                             {timelineContent.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="min-w-[240px] flex-shrink-0 bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:scale-105 transition-transform duration-300"
+                                    className="min-w-[280px] flex-shrink-0 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-5 shadow-lg hover:scale-105 transition-transform duration-300"
                                 >
                                     <div className="flex flex-col items-center text-center">
-                                        <div className="w-4 h-4 bg-blue-500 rounded-full mb-2"></div>
-                                        <h4 className="text-xl font-semibold text-blue-600">{item.year}</h4>
-                                        <p className="text-gray-700 text-sm mt-2">{item.content}</p>
+                                        <div className="p-3 bg-gray-800/50 rounded-full mb-4">
+                                            {item.icon}
+                                        </div>
+                                        <h4 className="text-xl font-semibold text-blue-400 mb-2">{item.year}</h4>
+                                        <p className="text-gray-200 text-sm">{item.content}</p>
                                     </div>
                                 </div>
                             ))}
