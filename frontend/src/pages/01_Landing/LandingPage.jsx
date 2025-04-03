@@ -41,7 +41,7 @@ export default function LandingPage() {
             {/* Background image with better performance */}
             <img
                 className="absolute h-screen w-full object-cover blur-sm transform scale-105"
-                src={goldenGateImg}
+                src={ goldenGateImg }
                 alt="Golden Gate Bridge"
                 loading="eager"
             />

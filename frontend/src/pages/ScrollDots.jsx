@@ -15,15 +15,22 @@ export default function ScrollDots() {
         const observerOptions = {
             root: document.querySelector(".overflow-y-scroll"), // custom scroll container
             rootMargin: "0px",
-            threshold: 0.6,
+            threshold: Array.from({ length: 101 }, (_, i) => i / 100), // threshold from 0 to 1
         };
+
+        const visibleSections = new Map();
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id);
-                }
+                visibleSections.set(entry.target.id, entry.intersectionRatio);
             });
+
+            // Get the section with the highest visibility
+            const mostVisibleSection = Array.from(visibleSections.entries()).reduce((max, entry) => {
+                return entry[1] > max[1] ? entry : max;
+            }, ["landing", 0])[0];
+
+            setActiveSection(mostVisibleSection);
         }, observerOptions);
 
         sections.forEach(({ id }) => {
