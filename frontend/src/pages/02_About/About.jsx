@@ -1,49 +1,52 @@
 import {
-    Code, Database, Server, Laptop, Smartphone, Hammer
+    Code, Database, Server, Laptop, Smartphone, Hammer, Loader
 } from "lucide-react";
+import { downloadResume } from "../../api-clients/client.jsx";
+import { useState } from "react";
+import { delay } from "../../utils/Util.jsx"
 
 const journeyContent = [
     {
         year: '2019',
         content:
-            'Joined OmniPreSense and developed an iOS WiFi radar app using VIPER and RxSwift. Released a high-performance Android version with 1,000+ downloads and significant performance improvements.',
-        icon: <Smartphone size={ 24 } className="text-blue-500"/>
+            'Joined OmniPreSense and developed an iOS WiFi radar app using VIPER and RxSwift. Also built a high-performance Android version with over 1,000 downloads and notable performance improvements.',
+        icon: <Smartphone size={24} className="text-blue-500" />,
     },
     {
         year: '2020',
         content:
-            'Earned a B.S. in Software Engineering from San Jose State University, building a strong foundation in software design and systems thinking.',
-        icon: <Laptop size={ 24 } className="text-blue-500"/>
+            'Earned a B.S. in Software Engineering from San Jose State University, gaining a strong foundation in software design and systems thinking.',
+        icon: <Laptop size={24} className="text-blue-500" />,
     },
     {
         year: '2021',
         content:
-            'Led the development of an Apple Watch-based healthcare tracking app at Atlas Lift Tech, improving patient safety through real-time system insights.',
-        icon: <Smartphone size={ 24 } className="text-blue-500"/>
+            'Contributed to the development of a healthcare tracking app for Apple Watch at Atlas Lift Tech, enhancing patient safety through real-time system insights.',
+        icon: <Smartphone size={24} className="text-blue-500" />,
     },
     {
         year: '2022',
         content:
-            'Designed and shipped RESTful APIs and optimized Bluetooth/MQTT connectivity for reliable, secure device communication across healthcare platforms.',
-        icon: <Server size={ 24 } className="text-blue-500"/>
+            'Built RESTful APIs and improved Bluetooth/MQTT connectivity for reliable and secure device communication across healthcare platforms.',
+        icon: <Server size={24} className="text-blue-500" />,
     },
     {
         year: '2023',
         content:
-            'Concluded tenure at Atlas Lift Tech to pursue an M.S. in Software Engineering at San Jose State University, focusing on distributed systems and clean architecture.',
-        icon: <Laptop size={ 24 } className="text-blue-500"/>
+            'Wrapped up work at Atlas Lift Tech to pursue an M.S. in Software Engineering at San Jose State University, with a focus on distributed systems and clean architecture.',
+        icon: <Laptop size={24} className="text-blue-500" />,
     },
     {
         year: '2024',
         content:
-            'Transitioned into full-stack web development; rebuilt a traffic monitoring dashboard using the MERN stack, integrated AWS S3 with signed URL downloads, and implemented resume analytics with GraphQL + MongoDB.',
-        icon: <Code size={ 24 } className="text-blue-500"/>
+            'Transitioned into full-stack web development — rebuilt a traffic monitoring dashboard using the MERN stack, integrated AWS S3 with signed URL downloads, and implemented resume analytics with GraphQL and MongoDB.',
+        icon: <Code size={24} className="text-blue-500" />,
     },
     {
         year: '2025',
         content:
-            'Completed M.S. in Software Engineering and actively seeking opportunities to drive impact through scalable, user-focused engineering.',
-        icon: <Laptop size={ 24 } className="text-blue-500"/>
+            'Completed an M.S. in Software Engineering and currently seeking opportunities to create impact through scalable, user-focused engineering.',
+        icon: <Laptop size={24} className="text-blue-500" />,
     },
 ];
 
@@ -58,6 +61,30 @@ const techStack = [
 ];
 
 export default function About() {
+    const [isDownloading, setIsDownloading] = useState(false);
+
+    const handleDownload = async () => {
+        setIsDownloading(true);
+        try {
+            const res = await downloadResume();
+
+            if (res?.url) {
+                const link = document.createElement("a");
+                link.href = res.url;
+                link.setAttribute("download", "Nguyen_Bui_Resume.pdf");
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            } else {
+                console.error("Download URL not found.");
+            }
+        } catch (err) {
+            console.error("Resume download failed:", err.message);
+        } finally {
+            setIsDownloading(false);
+        }
+    };
+
     return (
         <section
             id="about"
@@ -76,17 +103,17 @@ export default function About() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-10 w-full max-w-5xl mb-14">
-                <div className="text-lg leading-relaxed text-gray-200">
-                    <p className="text-justify mb-4">
+                <div className="text-lg leading-relaxed text-gray-200 space-y-4">
+                    <p className="text-justify">
                         I'm a <span className="text-blue-400">software engineer</span> with
-                        <span className="text-blue-400"> 3+ years</span> in
+                        <span className="text-blue-400"> over 3 years</span> of experience in
                         <span className="text-blue-400"> mobile development</span>, now focused on
                         <span className="text-blue-400"> full-stack web development</span>. I build
-                        <span className="text-blue-400"> scalable, user-first applications</span> using
+                        <span className="text-blue-400"> scalable, user-centric applications</span> using
                         <span className="text-blue-400"> React</span>,
                         <span className="text-blue-400"> Node.js</span>,
                         <span className="text-blue-400"> GraphQL</span>, and
-                        <span className="text-blue-400"> MongoDB</span>, with a strong emphasis on
+                        <span className="text-blue-400"> MongoDB</span> &mdash; with a strong emphasis on
                         <span className="text-blue-400"> clean architecture</span> and
                         <span className="text-blue-400"> performance</span>.
                     </p>
@@ -94,15 +121,33 @@ export default function About() {
                     <p className="text-justify">
                         Recently, I integrated <span className="text-blue-400">AWS S3</span> with
                         <span className="text-blue-400"> signed URL downloads</span> and built
-                        <span className="text-blue-400"> resume analytics</span> via
-                        <span className="text-blue-400"> GraphQL</span> +
+                        <span className="text-blue-400"> resume analytics</span> using
+                        <span className="text-blue-400"> GraphQL</span> and
                         <span className="text-blue-400"> MongoDB</span>. I'm also modernizing a
                         <span className="text-blue-400"> traffic monitoring dashboard</span> using
-                        <span className="text-blue-400"> React</span> +
-                        <span className="text-blue-400"> Tailwind</span>, preparing it to render
+                        <span className="text-blue-400"> React</span> and
+                        <span className="text-blue-400"> Tailwind</span>, preparing it to display
                         <span className="text-blue-400"> live metrics</span> from
                         <span className="text-blue-400"> InfluxDB</span>.
                     </p>
+
+                    <div className="text-justify">
+                        <button
+                            onClick={handleDownload}
+                            disabled={isDownloading}
+                            className={`
+                            inline-flex items-center gap-2 text-blue-400 transition-colors
+                            ${isDownloading ? 
+                                'opacity-50 cursor-not-allowed pointer-events-none' :
+                                'hover:text-blue-300 cursor-pointer'}
+                            `}
+                        >
+                            <span>Download my resume</span>
+                            {isDownloading ? (
+                                <Loader className="animate-spin" size={16} />
+                                ) : null}
+                        </button>
+                    </div>
                 </div>
 
                 {/* Tech Stack Section */ }

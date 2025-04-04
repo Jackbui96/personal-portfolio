@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Phone, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -75,15 +75,8 @@ export default function Contact() {
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-xl">
                             <h3 className="text-xl font-semibold mb-4 text-blue-400">Current Status</h3>
                             <p className="text-gray-300 mb-4">
-                                Currently available for full-stack development opportunities in the San Francisco Bay Area or remote positions.
+                                I'm currently available for full-stack development opportunities in the San Francisco Bay Area or remote roles.
                             </p>
-                            <a
-                                href="/#landing"
-                                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-                            >
-                                <span>Download my resume</span>
-                                <ArrowRight size={16} />
-                            </a>
                         </div>
                     </div>
 
@@ -109,7 +102,7 @@ export default function Contact() {
                                     <ul className="space-y-2 text-gray-300">
                                         <li className="flex items-start">
                                             <div className="text-blue-400 mr-2">•</div>
-                                            <p>Full-stack developer positions utilizing modern JavaScript frameworks</p>
+                                            <p>Roles focusing on building scalable applications with clean architecture</p>
                                         </li>
                                         <li className="flex items-start">
                                             <div className="text-blue-400 mr-2">•</div>
@@ -125,10 +118,10 @@ export default function Contact() {
                                 <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
                                     <h4 className="text-lg font-medium text-blue-300 mb-2">Thank You for Visiting</h4>
                                     <p className="text-gray-300 mb-4">
-                                        I appreciate you taking the time to explore my portfolio and learn about my work. Your interest means a lot to me, and I'm grateful for the opportunity to share my journey and projects with you.
+                                        I appreciate you taking the time to explore my portfolio and learn about my work. Your interest means a lot, and I'm grateful for the opportunity to share my journey and work with you.
                                     </p>
                                     <p className="text-gray-300 mb-4">
-                                        Feel free to reach out through any of the contact methods listed if you'd like to connect or discuss potential collaborations.
+                                        Feel free to reach out through any of the contact methods listed if you'd like to connect.
                                     </p>
                                 </div>
                             </div>

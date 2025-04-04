@@ -2,29 +2,43 @@ import stockImg from "../../assets/stock_prediction_app.jpg";
 
 export const listOfProjects = [
     {
-        title: "Stock Prediction App",
-        description: "This project implements a full pipeline for predicting stock prices using a deep learning model. The application fetches historical stock data directly from Snowflake, preprocesses it using MinMax scaling, and trains a Long Short-Term Memory (LSTM) model to predict future closing prices.",
+        title: "Live Traffic Monitor",
+        category: "Web Development",
+        description: "A real-time dashboard visualizing radar sensor data for smart cities and traffic analysis using the MERN stack and AWS.",
         image: stockImg,
         tags: [
-            "Deep Learning", "LSTM", "Time Series Forecasting", "TensorFlow", "Snowflake",
-            "Python", "Stock Market", "Data Visualization", "MinMaxScaler", "Keras", "Finance"
+            "React", "Node.js", "Express", "MongoDB",
+            "Influx", "AWS"
         ]
     },
     {
-        title: "Live Traffic Monitor",
-        description: "Live traffic dashboard powered by Node.js & AWS.",
+        title: "Malicious URL Detection",
+        category: "Machine Learning",
+        description: "Lightweight machine learning system using TF-IDF and Logistic Regression to classify malicious URLs for safer browsing.",
         image: stockImg,
-        tags: ["React", "Influx"]
+        tags: [
+            "Python", "Machine Learning",
+            "Logistic Regression", "TF-IDF", "Text Classification"
+        ],
     },
     {
         title: "Stock Prediction App",
-        description: "Real-time stock forecasting using Gemini + LSTM, Kafka, and React.",
+        category: "Machine Learning",
+        description: "A deep learning-powered pipeline for forecasting stock prices using historical data from Snowflake and LSTM models.",
         image: stockImg,
+        tags: [
+            "Python", "TensorFlow", "Keras", "LSTM",
+            "Snowflake"
+        ]
     },
     {
-        title: "Malicious URL Detection",
-        description: "Detect malicious URLs using TF-IDF feature extraction and Logistic Regression. Lightweight, interpretable, and built for real-world safety applications.",
+        title: "Cascade (Distributed System)",
+        category: "Distributed Systems",
+        description: "A distributed coordination system using async gRPC, shared memory, and a tree-based overlay to stream and route data across sink nodes.",
         image: stockImg,
-        tags: ["Machine Learning", "Logistic Regression", "TF-IDF", "Cybersecurity", "Text Classification", "Python"],
-    }
+        tags: [
+            "C++", "Python", "gRPC",
+            "Multithreading", "Load Balancing", "Distributed Systems"
+        ]
+    },
 ]
