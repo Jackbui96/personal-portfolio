@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import goldenGateImg from "../../assets/golden_gate.jpg";
 import { downloadResume } from "../../api-clients/client.jsx";
-import { ArrowDown, Download, Code, User } from "lucide-react";
+import { Download, Code, User } from "lucide-react";
 
 export default function LandingPage() {
     const [isDownloading, setIsDownloading] = useState(false);
@@ -91,11 +91,6 @@ export default function LandingPage() {
                         <Download size={18} className={isDownloading ? "animate-bounce" : "group-hover:animate-pulse"} />
                         {isDownloading ? "Downloading..." : "Download Resume"}
                     </button>
-                </div>
-
-                {/* Scroll indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <ArrowDown size={30} className="text-white/70" />
                 </div>
             </div>
         </section>
