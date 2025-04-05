@@ -3,7 +3,6 @@ import {
 } from "lucide-react";
 import { downloadResume } from "../../api-clients/client.jsx";
 import { useState } from "react";
-import { delay } from "../../utils/Util.jsx"
 
 const journeyContent = [
     {
