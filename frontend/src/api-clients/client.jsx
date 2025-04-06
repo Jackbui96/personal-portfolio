@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const API_BASE = "https://api.a-pani.com/v1/download";
+
 export const downloadResume = async () => {
     try {
-        const res = await axios.get("http://localhost:5000/api/v1/download/resume");
+        const res = await axios.get(`${API_BASE}/resume`);
         return res.data;
     } catch (err) {
         console.error("Download failed: ", err);
