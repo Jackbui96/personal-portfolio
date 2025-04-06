@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# 🌐 Portfolio Website — portfolio.a-pani.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of Nguyen Bui’s personal portfolio, built to showcase projects, resume, and work experience.
 
-## Available Scripts
+## 🛠️ Tech Stack
 
-In the project directory, you can run:
+- **React** + **Vite**
+- **Tailwind CSS** for styling
+- **Axios** for API integration
+- **Hosted on AWS EC2** with NGINX + SSL (Let's Encrypt)
 
-### `npm start`
+## 🔥 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Resume download via signed S3 URL
+- Analytics tracking via backend API
+- Project filtering by tag/category
+- Timeline visualization of experience
+- Responsive and clean UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Structure
 
-### `npm test`
+```
+src/
+├── components/
+├── pages/
+├── api-clients/
+├── assets/
+└── utils/
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Setup
 
-### `npm run build`
+```bash
+# Install dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Run locally
+npm run dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Build for production
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🌍 Environment (optional)
 
-### `npm run eject`
+```env
+VITE_API_BASE=https://api.a-pani.com/v1
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `build/` folder is served by NGINX:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```nginx
+server {
+    listen 80;
+    server_name portfolio.a-pani.com;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    root /var/www/portfolio/build;
+    index index.html;
 
-## Learn More
+    location / {
+        try_files $uri /index.html;
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    location ~ /.well-known/acme-challenge/ {
+        allow all;
+    }
+}
+```
