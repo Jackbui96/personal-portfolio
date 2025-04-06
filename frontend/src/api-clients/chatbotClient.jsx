@@ -1,6 +1,6 @@
 import axios from  "axios";
 
-const API_BASE = "http://localhost:5000/api/v1/chat";
+const API_BASE = "https://api.a-pani.com/v1/chat";
 
 export const sendChatMessage = async (message) => {
     try {
