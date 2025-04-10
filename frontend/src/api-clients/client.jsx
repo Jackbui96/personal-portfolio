@@ -5,7 +5,7 @@ const API_BASE_DEV = "http://localhost:5000"
 
 export const downloadResume = async () => {
     try {
-        const res = await axios.get(`${API_BASE_DEV}/v1/download/resume`);
+        const res = await axios.get(`${API_BASE}/v1/download/resume`);
         return res.data;
     } catch (err) {
         console.error("Download failed: ", err);
@@ -14,7 +14,7 @@ export const downloadResume = async () => {
 
 export const trackVisit = async () => {
     try {
-        const res = await axios.post(`${API_BASE_DEV}/graphql`, {
+        const res = await axios.post(`${API_BASE}/graphql`, {
             query: `
             mutation {
                 trackVisit(
