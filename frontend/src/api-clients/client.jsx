@@ -25,6 +25,7 @@ export const trackVisit = async () => {
         }, {
             headers: {
                 "Content-Type": "application/json",
+                "x-db-name": "portfolio",
             }
         });
         console.log("📦 GraphQL response:", res.data);
