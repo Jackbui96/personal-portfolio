@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const API_BASE = "https://api.a-pani.com";
-const API_BASE_DEV = "http://localhost:5000"
 
 export const downloadResume = async () => {
     try {
-        const res = await axios.get(`${API_BASE}/v1/download/resume`);
+        const res = await axios.get(`${API_BASE}/v1/resume`);
         return res.data;
     } catch (err) {
         console.error("Download failed: ", err);
@@ -14,7 +13,7 @@ export const downloadResume = async () => {
 
 export const trackVisit = async () => {
     try {
-        const res = await axios.post(`${API_BASE}/graphql`, {
+        const res = await axios.post(`${API_BASE}/web-tracking/graphql`, {
             query: `
             mutation {
                 trackVisit(
