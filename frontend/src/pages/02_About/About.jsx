@@ -8,7 +8,7 @@ const journeyContent = [
     {
         year: '2019',
         content:
-            'Joined OmniPreSense and developed an iOS WiFi radar app using VIPER and RxSwift. Also built a high-performance Android version with over 1,000 downloads and notable performance improvements.',
+            'Joined OmniPreSense as a Software Engineer and developed mobile applications and backend systems, building scalable solutions for traffic monitoring and radar applications.',
         icon: <Smartphone size={24} className="text-blue-500" />,
     },
     {
@@ -20,43 +20,43 @@ const journeyContent = [
     {
         year: '2021',
         content:
-            'Contributed to the development of a healthcare tracking app for Apple Watch at Atlas Lift Tech, enhancing patient safety through real-time system insights.',
-        icon: <Smartphone size={24} className="text-blue-500" />,
+            'Transitioned to Atlas Lift Tech as a Software Engineer, developing SensorSuite healthcare monitoring application and building HIPAA-compliant RESTful APIs for clinical settings.',
+        icon: <Server size={24} className="text-blue-500" />,
     },
     {
         year: '2022',
         content:
-            'Built RESTful APIs and improved Bluetooth/MQTT connectivity for reliable and secure device communication across healthcare platforms.',
+            'Enhanced healthcare systems at Atlas Lift Tech by implementing data synchronization using MQTT and Bluetooth protocols, delivering 5+ key features for patient safety monitoring.',
         icon: <Server size={24} className="text-blue-500" />,
     },
     {
         year: '2023',
         content:
-            'Wrapped up work at Atlas Lift Tech to pursue an M.S. in Software Engineering at San Jose State University, with a focus on distributed systems and clean architecture.',
+            'Completed work at Atlas Lift Tech and began pursuing an M.S. in Software Engineering at San Jose State University full-time, focusing on AI/ML and distributed systems.',
         icon: <Laptop size={24} className="text-blue-500" />,
     },
     {
         year: '2024',
         content:
-            'Transitioned into full-stack web development — rebuilt a traffic monitoring dashboard using the MERN stack, integrated AWS S3 with signed URL downloads, and implemented resume analytics with GraphQL and MongoDB.',
+            'Developed AI-powered customer support systems using LLMs and RAG for graduate capstone project. Returned to OmniPreSense in December to rebuild traffic monitoring infrastructure.',
         icon: <Code size={24} className="text-blue-500" />,
     },
     {
         year: '2025',
         content:
-            'Completed an M.S. in Software Engineering and currently seeking opportunities to create impact through scalable, user-focused engineering.',
+            'Completed M.S. in Software Engineering and currently leading technical initiatives at OmniPreSense, improving system performance by 40% and supporting 10,000+ concurrent users.',
         icon: <Laptop size={24} className="text-blue-500" />,
     },
 ];
 
 // Tech stack data
 const techStack = [
-    {category: "Frontend", skills: ["React", "Tailwind CSS", "JavaScript"]},
-    {category: "Backend", skills: ["Node.js", "Express", "GraphQL"]},
-    {category: "Database", skills: ["MongoDB", "InfluxDB"]},
+    {category: "Frontend", skills: ["React", "Next.js", "Tailwind CSS", "Material UI", "JavaScript", "TypeScript"]},
+    {category: "Backend", skills: ["Node.js", "Express.js", "FastAPI", "Spring Boot", "Python", "GraphQL", "REST APIs"]},
+    {category: "Database", skills: ["MongoDB", "PostgreSQL", "BigQuery", "InfluxDB"]},
     {category: "Mobile", skills: ["iOS (Swift)", "Android (Java/Kotlin)"]},
-    {category: "Cloud", skills: ["AWS S3", "AWS Lambda"]},
-    {category: "Tools", skills: ["Git", "Docker", "CI/CD"]}
+    {category: "Cloud/DevOps", skills: ["AWS (EC2, S3, ECR/ECS)", "Docker", "CI/CD", "Git"]},
+    {category: "AI/ML", skills: ["TensorFlow", "HuggingFace", "RAG Systems", "Python"]},
 ];
 
 export default function About() {
@@ -105,16 +105,22 @@ export default function About() {
                 <div className="text-lg leading-relaxed text-gray-200 space-y-4">
                     <p className="text-justify">
                         I'm a <span className="text-blue-400">software engineer</span> with
-                        <span className="text-blue-400"> over 3 years</span> of experience in
-                        <span className="text-blue-400"> mobile development</span>, now focused on
-                        <span className="text-blue-400"> full-stack web development</span>. I build
+                        <span className="text-blue-400"> 4+ years of professional experience</span> building
+                        <span className="text-blue-400"> scalable web applications</span>,
+                        <span className="text-blue-400"> mobile solutions</span>, and
+                        <span className="text-blue-400"> AI/ML systems</span>. Recent
+                        <span className="text-blue-400"> M.S. graduate</span> with expertise in
+                        <span className="text-blue-400"> full-stack development</span>,
+                        <span className="text-blue-400"> cloud infrastructure</span>, and
+                        <span className="text-blue-400"> machine learning</span>. I build
                         <span className="text-blue-400"> scalable, user-centric applications</span> using
                         <span className="text-blue-400"> React</span>,
                         <span className="text-blue-400"> Node.js</span>,
-                        <span className="text-blue-400"> GraphQL</span>, and
-                        <span className="text-blue-400"> MongoDB</span> &mdash; with a strong emphasis on
-                        <span className="text-blue-400"> clean architecture</span> and
-                        <span className="text-blue-400"> performance</span>.
+                        <span className="text-blue-400"> Python</span>, and
+                        <span className="text-blue-400"> AWS</span> &mdash; with a proven track record of delivering
+                        <span className="text-blue-400"> production systems</span> serving
+                        <span className="text-blue-400"> thousands of users</span> across
+                        <span className="text-blue-400"> healthcare and technology sectors</span>.
                     </p>
 
                     <p className="text-justify">
